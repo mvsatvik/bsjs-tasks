@@ -1,0 +1,43 @@
+7.                                                                                                                                                                                                                           <html>
+<head>
+    <style>
+        /* Add CSS styles here if needed */
+    </style>
+    <script type="text/javascript">
+        var img = null;
+        var animationInterval;
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '50px';
+        }
+
+        function moveRight() {
+            // Start the animation by calling moveRight repeatedly
+            animationInterval = setInterval(function () {
+                img.style.left = parseInt(img.style.left) + 1 + 'px';
+            }, 10); // Adjust the interval for desired animation speed (in milliseconds)
+        }
+
+        function stop() {
+            // Stop the animation
+            clearInterval(animationInterval);
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <form>
+        <img id="myimg" src="Train1.png" />
+        <center>
+            <p>Click the following buttons to handle animation</p>
+            <input type="button" value="Start" onclick="moveRight();" />
+            <input type="button" value="Stop" onclick="stop();" />
+        </center>
+    </form>
+</body>
+
+</html>
